@@ -1,0 +1,22 @@
+{
+  "title": "Scheduling: Taint node + toleration pod",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "scripts/background.sh"
+    },
+    "steps": [
+      {
+        "title": "Task",
+        "text": "step1.md",
+        "verify": "scripts/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "title": "CKA 2026 Real-World Labs (17 Scenarios)",
+  "description": "Exam-style Kubernetes Administrator scenarios with guided tasks, resets, and verification.",
+  "items": [
+    {
+      "path": "01-argo-helm-template",
+      "title": "01 - Helm: Render Argo CD manifests (no CRDs)",
+      "description": "Helm: Render Argo CD manifests (no CRDs)"
+    },
+    {
+      "path": "02-sidecar-log-tail",
+      "title": "02 - Workloads: Add sidecar to tail shared logs",
+      "description": "Workloads: Add sidecar to tail shared logs"
+    },
+    {
+      "path": "03-gatewayapi-migrate",
+      "title": "03 - Networking: Ingress to Gateway API migration",
+      "description": "Networking: Ingress to Gateway API migration"
+    },
+    {
+      "path": "04-resources-fair-share",
+      "title": "04 - Workloads: Fair requests/limits with overhead",
+      "description": "Workloads: Fair requests/limits with overhead"
+    },
+    {
+      "path": "05-storageclass-default",
+      "title": "05 - Storage: Create default StorageClass (WFFC)",
+      "description": "Storage: Create default StorageClass (WFFC)"
+    },
+    {
+      "path": "06-priorityclass-patch",
+      "title": "06 - Scheduling: PriorityClass from existing highest",
+      "description": "Scheduling: PriorityClass from existing highest"
+    },
+    {
+      "path": "07-ingress-echo",
+      "title": "07 - Networking: Ingress + NodePort service (echo)",
+      "description": "Networking: Ingress + NodePort service (echo)"
+    },
+    {
+      "path": "08-crds-and-explain",
+      "title": "08 - Cluster: List CRDs + kubectl explain extraction",
+      "description": "Cluster: List CRDs + kubectl explain extraction"
+    },
+    {
+      "path": "09-networkpolicy-least",
+      "title": "09 - Networking: Least-permissive NetworkPolicy",
+      "description": "Networking: Least-permissive NetworkPolicy"
+    },
+    {
+      "path": "10-hpa-stabilization",
+      "title": "10 - Workloads: HPA with downscale stabilization",
+      "description": "Workloads: HPA with downscale stabilization"
+    },
+    {
+      "path": "11-cni-install",
+      "title": "11 - Cluster: Install a CNI (policy-capable)",
+      "description": "Cluster: Install a CNI (policy-capable)"
+    },
+    {
+      "path": "12-pvc-mariadb",
+      "title": "12 - Storage: PVC + mount into MariaDB",
+      "description": "Storage: PVC + mount into MariaDB"
+    },
+    {
+      "path": "13-cri-dockerd",
+      "title": "13 - Cluster: Install & enable cri-dockerd + sysctl",
+      "description": "Cluster: Install & enable cri-dockerd + sysctl"
+    },
+    {
+      "path": "14-apiserver-etcd-port",
+      "title": "14 - Troubleshooting: kube-apiserver etcd endpoint fix",
+      "description": "Troubleshooting: kube-apiserver etcd endpoint fix"
+    },
+    {
+      "path": "15-taints-tolerations",
+      "title": "15 - Scheduling: Taint node + toleration pod",
+      "description": "Scheduling: Taint node + toleration pod"
+    },
+    {
+      "path": "16-nodeport-expose",
+      "title": "16 - Networking: Expose deployment via NodePort",
+      "description": "Networking: Expose deployment via NodePort"
+    },
+    {
+      "path": "17-tls13-only",
+      "title": "17 - Security/Networking: Enforce TLSv1.3 only",
+      "description": "Security/Networking: Enforce TLSv1.3 only"
+    }
+  ]
+}
