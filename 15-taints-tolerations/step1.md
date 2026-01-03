@@ -1,7 +1,18 @@
-### Commands you’ll likely use
+## Tasks
+1. Taint node:
 ```bash
-kubectl get nodes
-kubectl taint node node01 IT=Kiddie:NoSchedule
-kubectl run itk-taint-test --image=busybox:1.36 -- sleep 3600
-kubectl get pod -o wide
+kubectl taint node worker-node01 Env=Production:NoSchedule
+```
+
+2. Create pod `prod-pod` with toleration for:
+   - key `Env`
+   - value `Production`
+   - effect `NoSchedule`
+
+Ensure it lands on `worker-node01` (use nodeName if needed).
+
+## Verify
+```bash
+kubectl describe node worker-node01 | sed -n '/Taints:/,/Unschedulable:/p'
+kubectl get pod prod-pod -o wide
 ```

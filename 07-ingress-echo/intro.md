@@ -1,7 +1,11 @@
-# Networking: Ingress + NodePort service (echo)
+# 07: Ingress Resource (host/path routing)
 
-**Goal:** Solve this scenario using `kubectl` and/or node tools (as required).
+## Goal
+Expose an application via Ingress and confirm HTTP 200.
 
-## Rules
-- Treat this like the exam: minimal changes, verify results.
-- Use the names given in this scenario (they may differ from common tutorials to keep the content unique).
+## Requirements
+- Namespace: `demo-app`
+- Ingress: `app-ingress`
+- Service: `app-service` (ClusterIP) on port 8090
+- Host: `demo.example.com`
+- Path: `/api`

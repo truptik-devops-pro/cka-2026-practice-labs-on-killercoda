@@ -1,7 +1,14 @@
-# Helm: Render Argo CD manifests (no CRDs)
+# 01: Argo CD Helm Template (CRDs already installed)
 
-**Goal:** Solve this scenario using `kubectl` and/or node tools (as required).
+## Goal
+Generate Argo CD manifests using Helm **without installing CRDs** (CRDs are pre-installed).
 
-## Rules
-- Treat this like the exam: minimal changes, verify results.
-- Use the names given in this scenario (they may differ from common tutorials to keep the content unique).
+## Requirements
+- Add Helm repo name: `argocd-repo`
+- Render chart version: **7.6.8**
+- Namespace: `gitops`
+- Save output to: `/home/candidate/argocd-manifest.yaml`
+
+## Constraints
+- Do not apply/install to the cluster.
+- Output must not contain any `CustomResourceDefinition`.

@@ -1,13 +1,9 @@
-# Scheduling: Taint node + toleration pod
+# 15: Taints & Tolerations
 
-**Goal:** Solve this scenario using `kubectl` and/or node tools (as required).
+## Goal
+Reserve a node so normal pods can't schedule, then schedule a pod with toleration on that node.
 
-## Rules
-- Treat this like the exam: minimal changes, verify results.
-- Use the names given in this scenario (they may differ from common tutorials to keep the content unique).
-
-## Task
-1) Taint **node01** with `key=IT value=Kiddie effect=NoSchedule`.
-2) Create a pod that tolerates this taint and lands on node01.
-
-> If your environment doesn't have `node01`, use the worker node shown by `kubectl get nodes`.
+## Requirements
+- Node: `worker-node01`
+- Taint: key=`Env`, value=`Production`, effect=`NoSchedule`
+- Pod name: `prod-pod` must land on `worker-node01`

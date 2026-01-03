@@ -1,6 +1,13 @@
-### Useful checks
+## Tasks
+1. Update deployment `service-deployment` to expose container port:
+   - port 8080
+   - protocol TCP
+   - name `http`
+
+2. Create NodePort service `service-nodeport` exposing port 8080/TCP.
+
+## Verify
 ```bash
-kubectl get deploy -n itk-nodeport itk-nodeport-dep -o yaml | less
-kubectl get svc -n itk-nodeport
-kubectl describe svc -n itk-nodeport itk-nodeport-svc
+kubectl -n services get deploy,svc
+kubectl -n services describe svc service-nodeport
 ```

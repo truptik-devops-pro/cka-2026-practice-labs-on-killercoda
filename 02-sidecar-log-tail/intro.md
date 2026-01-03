@@ -1,7 +1,11 @@
-# Workloads: Add sidecar to tail shared logs
+# 02: Sidecar Container (log-reader)
 
-**Goal:** Solve this scenario using `kubectl` and/or node tools (as required).
+## Goal
+Update the `webapp` Deployment by adding a sidecar container that tails an application log file from a shared volume.
 
-## Rules
-- Treat this like the exam: minimal changes, verify results.
-- Use the names given in this scenario (they may differ from common tutorials to keep the content unique).
+## Requirements
+- Deployment: `webapp`
+- Sidecar name: `log-reader`
+- Sidecar image: `busybox:1.36`
+- Command: `/bin/sh -c "tail -f /var/log/application.log"`
+- Use a volume mounted at `/var/log` in both containers

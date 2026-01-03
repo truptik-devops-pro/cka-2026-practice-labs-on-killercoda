@@ -1,7 +1,10 @@
-# Storage: PVC + mount into MariaDB
+# 12: PVC + update deployment manifest
 
-**Goal:** Solve this scenario using `kubectl` and/or node tools (as required).
+## Goal
+Claim an existing retained PV with a PVC and update a deployment to use it.
 
-## Rules
-- Treat this like the exam: minimal changes, verify results.
-- Use the names given in this scenario (they may differ from common tutorials to keep the content unique).
+## Requirements
+- Namespace: `database`
+- PVC: `database-storage`
+- RWO, 500Mi
+- Update `/opt/database.yaml` to use the PVC

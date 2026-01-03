@@ -1,7 +1,8 @@
-# Cluster: List CRDs + kubectl explain extraction
+# 08: CRDs (Istio) + kubectl explain
 
-**Goal:** Solve this scenario using `kubectl` and/or node tools (as required).
+## Goal
+Practice CRD discovery and schema documentation extraction using kubectl.
 
-## Rules
-- Treat this like the exam: minimal changes, verify results.
-- Use the names given in this scenario (they may differ from common tutorials to keep the content unique).
+## Requirements
+1. List all Istio CRDs and save to `~/crds-list.yaml` using default kubectl output.
+2. Extract documentation for `VirtualService.spec.hosts` and save to `~/hosts-spec.yaml`.

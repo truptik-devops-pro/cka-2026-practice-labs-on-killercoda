@@ -1,4 +1,11 @@
-## Your task
-Follow the instructions in the *Goal* section of the scenario.
+## Tasks
+Create a NetworkPolicy that allows only the required interaction:
+- allow ingress to backend only from frontend
+- restrict to required port(s) if known
+- keep everything else blocked (least permissive)
 
-When you're done, click **Check**.
+## Verify
+```bash
+kubectl get netpol -A
+kubectl -n backend describe netpol <policy-name>
+```

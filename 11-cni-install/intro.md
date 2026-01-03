@@ -1,7 +1,7 @@
-# Cluster: Install a CNI (policy-capable)
+# 11: CNI Installation (NetworkPolicy support required)
 
-**Goal:** Solve this scenario using `kubectl` and/or node tools (as required).
+## Goal
+Install a CNI that enables pod networking and supports NetworkPolicy enforcement.
 
-## Rules
-- Treat this like the exam: minimal changes, verify results.
-- Use the names given in this scenario (they may differ from common tutorials to keep the content unique).
+## Requirement
+- Install Calico from manifest (NetworkPolicy enforcement required).

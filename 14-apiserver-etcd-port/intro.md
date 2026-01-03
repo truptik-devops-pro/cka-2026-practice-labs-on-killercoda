@@ -1,7 +1,7 @@
-# Troubleshooting: kube-apiserver etcd endpoint fix
+# 14: Troubleshooting - kube-apiserver cannot connect to etcd
 
-**Goal:** Solve this scenario using `kubectl` and/or node tools (as required).
+## Scenario
+After migration, kube-apiserver points to etcd peer port 2380 instead of client port 2379.
 
-## Rules
-- Treat this like the exam: minimal changes, verify results.
-- Use the names given in this scenario (they may differ from common tutorials to keep the content unique).
+## Goal
+Fix kube-apiserver etcd endpoint to use port 2379.

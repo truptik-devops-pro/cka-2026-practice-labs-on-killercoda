@@ -1,7 +1,7 @@
-# Networking: Ingress to Gateway API migration
+# 03: Gateway API Migration (Ingress -> Gateway/HTTPRoute)
 
-**Goal:** Solve this scenario using `kubectl` and/or node tools (as required).
+## Goal
+Migrate the existing Ingress `api-ingress` to Gateway API resources while keeping HTTPS/TLS behavior and routing rules.
 
-## Rules
-- Treat this like the exam: minimal changes, verify results.
-- Use the names given in this scenario (they may differ from common tutorials to keep the content unique).
+## Note
+GatewayClass `nginx-gateway` already exists.

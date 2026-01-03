@@ -1,13 +1,9 @@
-# Scheduling: PriorityClass from existing highest
+# 06: PriorityClass (highest - 1) + patch deployment
 
-**Goal:** Solve this scenario using `kubectl` and/or node tools (as required).
+## Goal
+Create a PriorityClass with value = (highest user-defined PriorityClass - 1) and patch a deployment to use it.
 
-## Rules
-- Treat this like the exam: minimal changes, verify results.
-- Use the names given in this scenario (they may differ from common tutorials to keep the content unique).
-
-## Task
-Namespace: `itk-priority`
-
-1) Create PriorityClass `itk-high` with value **(highest existing user-defined PriorityClass value - 1)**.
-2) Patch Deployment `itk-logger` in namespace `itk-priority` to use `itk-high`.
+## Requirements
+- Namespace: `production`
+- Deployment: `logger-app`
+- New PriorityClass: `critical-priority`

@@ -1,7 +1,11 @@
-# Security/Networking: Enforce TLSv1.3 only
+# 17: TLS Hardening (TLSv1.3 only)
 
-**Goal:** Solve this scenario using `kubectl` and/or node tools (as required).
+## Goal
+Restrict TLS to TLSv1.3 only and validate with curl.
 
-## Rules
-- Treat this like the exam: minimal changes, verify results.
-- Use the names given in this scenario (they may differ from common tutorials to keep the content unique).
+## Requirements
+- Namespace: `web`
+- Deployment: `web-server`
+- Service: `web-service`
+- Hostname in `/etc/hosts`: `secure.demo.local`
+- TLSv1.2 must fail; TLSv1.3 must succeed
