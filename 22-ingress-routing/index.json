@@ -1,0 +1,20 @@
+{
+    "title": "22: Create Ingress Routing",
+    "description": "Create Ingress resource exposing a service on a path",
+    "details": {
+        "intro": {
+            "text": "intro.md"
+        },
+        "steps": [
+            {
+                "text": "step1.md"
+            }
+        ],
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "backend": {
+        "imageid": "kubernetes-kubeadm-1node"
+    }
+}

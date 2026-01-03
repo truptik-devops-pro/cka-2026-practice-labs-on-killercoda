@@ -1,0 +1,20 @@
+{
+    "title": "19: Extract Specific Log Lines",
+    "description": "Monitor logs and extract error lines to a file",
+    "details": {
+        "intro": {
+            "text": "intro.md"
+        },
+        "steps": [
+            {
+                "text": "step1.md"
+            }
+        ],
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "backend": {
+        "imageid": "kubernetes-kubeadm-1node"
+    }
+}

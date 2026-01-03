@@ -1,0 +1,20 @@
+{
+    "title": "21: Schedule Pod with NodeSelector",
+    "description": "Schedule a Pod onto nodes with specific labels",
+    "details": {
+        "intro": {
+            "text": "intro.md"
+        },
+        "steps": [
+            {
+                "text": "step1.md"
+            }
+        ],
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "backend": {
+        "imageid": "kubernetes-kubeadm-1node"
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "title": "18: Streaming Logs via Sidecar",
+    "description": "Add a sidecar container to stream file-based logs",
+    "details": {
+        "intro": {
+            "text": "intro.md"
+        },
+        "steps": [
+            {
+                "text": "step1.md"
+            }
+        ],
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "backend": {
+        "imageid": "kubernetes-kubeadm-1node"
+    }
+}

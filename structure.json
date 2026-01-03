@@ -1,5 +1,5 @@
 {
-  "title": "CKA 2026 Real-World Labs (17 Scenarios)",
+  "title": "CKA 2026 Real-World Labs (25 Scenarios)",
   "description": "Exam-style Kubernetes Administrator scenarios with guided tasks, resets, and verification.",
   "items": [
     {
@@ -86,6 +86,46 @@
       "path": "17-tls13-only",
       "title": "17 - Security/Networking: Enforce TLSv1.3 only",
       "description": "Security/Networking: Enforce TLSv1.3 only"
+    },
+    {
+      "path": "18-sidecar-log-stream",
+      "title": "18 - Workloads: Streaming Logs via Sidecar",
+      "description": "Workloads: Add sidecar to stream file-based logs"
+    },
+    {
+      "path": "19-extract-log-errors",
+      "title": "19 - Troubleshooting: Extract Specific Log Lines",
+      "description": "Troubleshooting: Filter and save error logs to file"
+    },
+    {
+      "path": "20-pvc-expand",
+      "title": "20 - Storage: PVC + Pod Mount + Expand PVC",
+      "description": "Storage: Create PVC, mount, and expand storage"
+    },
+    {
+      "path": "21-nodeselector-pod",
+      "title": "21 - Scheduling: Schedule Pod with NodeSelector",
+      "description": "Scheduling: Pod placement using node labels"
+    },
+    {
+      "path": "22-ingress-routing",
+      "title": "22 - Networking: Create Ingress Routing",
+      "description": "Networking: Ingress resource for path-based routing"
+    },
+    {
+      "path": "23-named-port-nodeport",
+      "title": "23 - Networking: Named Port + NodePort Service",
+      "description": "Networking: Add named port and create NodePort service"
+    },
+    {
+      "path": "24-netpol-namespace",
+      "title": "24 - Networking: NetworkPolicy Namespace Restriction",
+      "description": "Networking: Allow traffic from specific namespace only"
+    },
+    {
+      "path": "25-rbac-clusterrole",
+      "title": "25 - Security: RBAC ClusterRole + RoleBinding",
+      "description": "Security: Namespace-scoped permissions for CI/CD"
     }
   ]
 }

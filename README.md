@@ -2,7 +2,7 @@
 
 # 🎯 CKA 2026 Practice Labs
 
-### *Master Kubernetes Administration with 17 Hands-On Scenarios*
+### *Master Kubernetes Administration with 25 Hands-On Scenarios*
 
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
 [![CKA](https://img.shields.io/badge/CKA-2026-FF6B6B?style=for-the-badge&logo=cncf&logoColor=white)](https://www.cncf.io/certification/cka/)
@@ -49,7 +49,7 @@
 
 ### ✅ The Solution
 
-✔️ **17 hands-on labs** on real clusters  
+✔️ **25 hands-on labs** on real clusters  
 ✔️ Automated verification scripts  
 ✔️ Exam-style time pressure practice  
 ✔️ Covers all 5 CKA domains  
@@ -78,11 +78,11 @@
 
 | Domain | Labs | Coverage |
 |:------:|:----:|:--------:|
-| 🏗️ Cluster Architecture | 4 | ████████░░ |
-| 📦 Workloads & Scheduling | 5 | ██████████ |
-| 🌐 Services & Networking | 4 | ████████░░ |
-| 💾 Storage | 2 | ████░░░░░░ |
-| 🔧 Troubleshooting | 2 | ████░░░░░░ |
+| 🏗️ Cluster Architecture | 5 | ██████████ |
+| 📦 Workloads & Scheduling | 7 | ██████████ |
+| 🌐 Services & Networking | 7 | ██████████ |
+| 💾 Storage | 3 | ██████░░░░ |
+| 🔧 Troubleshooting | 3 | ██████░░░░ |
 
 </div>
 
@@ -610,6 +610,190 @@ curl <node-ip>:<node-port>
 curl --tlsv1.2 https://<host>  # Should FAIL
 curl --tlsv1.3 https://<host>  # Should SUCCEED
 openssl s_client -connect <host>:443 -tls1_3
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 18 — Streaming Logs via Sidecar</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `18-sidecar-log-stream` |
+| **Difficulty** | 🟢 Easy |
+| **Time** | ~10 min |
+| **Domain** | Workloads & Scheduling |
+
+**What You'll Learn:**
+- Sidecar container pattern for log streaming
+- Shared volumes between containers
+- File-based log access via kubectl
+
+**Key Commands:**
+```bash
+kubectl get pod atlas-app -o jsonpath='{.spec.containers[*].name}'
+kubectl logs atlas-app -c log-sidecar --tail=30
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 19 — Extract Specific Log Lines</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `19-extract-log-errors` |
+| **Difficulty** | 🟢 Easy |
+| **Time** | ~8 min |
+| **Domain** | Troubleshooting |
+
+**What You'll Learn:**
+- Filtering logs with grep patterns
+- Redirecting output to files
+- Log analysis techniques
+
+**Key Commands:**
+```bash
+kubectl logs payment-api | grep "error file-not-found"
+wc -l /opt/CKA2026/payment-api/errors.log
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 20 — PVC + Pod Mount + Expand</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `20-pvc-expand` |
+| **Difficulty** | 🟡 Medium |
+| **Time** | ~12 min |
+| **Domain** | Storage |
+
+**What You'll Learn:**
+- PVC creation and mounting
+- Volume expansion process
+- Recording configuration changes
+
+**Key Commands:**
+```bash
+kubectl patch pvc site-content -p '{"spec":{"resources":{"requests":{"storage":"80Mi"}}}}'
+kubectl get pvc site-content -o yaml > /opt/CKA2026/resize-record.yaml
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 21 — Schedule Pod with NodeSelector</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `21-nodeselector-pod` |
+| **Difficulty** | 🟢 Easy |
+| **Time** | ~8 min |
+| **Domain** | Workloads & Scheduling |
+
+**What You'll Learn:**
+- Node labeling and selection
+- Pod scheduling constraints
+- NodeSelector configuration
+
+**Key Commands:**
+```bash
+kubectl get nodes --show-labels | grep disk=ssd
+kubectl get pod nginx-kusc01801 -o jsonpath='{.spec.nodeSelector}'
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 22 — Create Ingress Routing</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `22-ingress-routing` |
+| **Difficulty** | 🟢 Easy |
+| **Time** | ~10 min |
+| **Domain** | Services & Networking |
+
+**What You'll Learn:**
+- Ingress resource creation
+- Path-based routing configuration
+- Backend service targeting
+
+**Key Commands:**
+```bash
+kubectl -n ing-private get ing wave -o yaml
+kubectl -n ing-private describe ing wave
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 23 — Named Port + NodePort Service</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `23-named-port-nodeport` |
+| **Difficulty** | 🟡 Medium |
+| **Time** | ~10 min |
+| **Domain** | Services & Networking |
+
+**What You'll Learn:**
+- Named container ports
+- NodePort service creation
+- Port mapping by name
+
+**Key Commands:**
+```bash
+kubectl -n portal get deploy ui-frontend -o jsonpath='{.spec.template.spec.containers[0].ports}'
+kubectl -n portal describe svc ui-frontend-svc
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 24 — NetworkPolicy Namespace Restriction</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `24-netpol-namespace` |
+| **Difficulty** | 🔴 Hard |
+| **Time** | ~15 min |
+| **Domain** | Services & Networking |
+
+**What You'll Learn:**
+- NetworkPolicy with namespace selectors
+- Least-privilege network access
+- Cross-namespace traffic control
+
+**Key Commands:**
+```bash
+kubectl -n echo get netpol allow-9000-from-team -o yaml
+kubectl label namespace team-app name=team-app
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 25 — RBAC ClusterRole + RoleBinding</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `25-rbac-clusterrole` |
+| **Difficulty** | 🟡 Medium |
+| **Time** | ~12 min |
+| **Domain** | Cluster Architecture |
+
+**What You'll Learn:**
+- ClusterRole creation
+- Namespace-scoped RoleBinding
+- ServiceAccount permissions
+
+**Key Commands:**
+```bash
+kubectl auth can-i create deployments --as=system:serviceaccount:app-squad:cicd-bot -n app-squad
+kubectl -n app-squad get rolebinding pipeline-deployer-binding -o yaml
 ```
 
 </details>
