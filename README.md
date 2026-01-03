@@ -22,8 +22,9 @@
 ---
 
 [🚀 Quick Start](#-quick-start) •
-[📚 Scenarios](#-scenario-catalog) •
+[� Structure](#-repository-structure) •
 [🎓 Study Guide](#-cka-study-strategy) •
+[📚 Scenarios](#-scenario-catalog) •
 [🤝 Contributing](#-contributing)
 
 </div>
@@ -121,7 +122,96 @@ cat scripts/verify.sh   # Verification logic
 
 ---
 
-## 📚 Scenario Catalog
+## � Repository Structure
+
+```
+📦 cka-2026-practice-labs-on-killercoda
+├── 📄 structure.json          # Killercoda course navigation
+├── 📄 README.md               # You are here
+│
+└── 📂 01-argo-helm-template/  # Each scenario folder
+    ├── 📄 index.json          # Killercoda config
+    ├── 📄 intro.md            # 🎯 Problem statement
+    ├── 📄 step1.md            # 📝 Tasks & hints
+    ├── 📄 finish.md           # ✅ Wrap-up
+    └── 📂 scripts/
+        ├── 🔧 background.sh   # Auto-setup
+        └── ✔️ verify.sh       # Pass/Fail check
+```
+
+---
+
+## 🎓 CKA Study Strategy
+
+<div align="center">
+
+```
+    ┌─────────────────────────────────────────────────────────┐
+    │                  🎯 THE 5-STEP METHOD                   │
+    └─────────────────────────────────────────────────────────┘
+                              │
+        ┌─────────────────────┼─────────────────────┐
+        │                     │                     │
+        ▼                     ▼                     ▼
+   ┌─────────┐          ┌─────────┐          ┌─────────┐
+   │  READ   │    →     │  PLAN   │    →     │ EXECUTE │
+   │  intro  │          │ 30-60s  │          │ kubectl │
+   └─────────┘          └─────────┘          └─────────┘
+                              │
+                              ▼
+                        ┌─────────┐
+                        │ VERIFY  │
+                        │ checks  │
+                        └─────────┘
+                              │
+                              ▼
+                        ┌─────────┐
+                        │ REPEAT  │
+                        │ faster! │
+                        └─────────┘
+```
+
+</div>
+
+### 💡 Pro Tips
+
+| Tip | Why It Matters |
+|-----|---------------|
+| ⏱️ **Time yourself** | CKA is 2 hours for 15-20 tasks |
+| 📖 **Use docs.kubernetes.io** | It's allowed in the exam! |
+| 🔄 **Practice verification** | Know how to prove success |
+| 💪 **Repeat weak areas** | Restart scenarios until fast |
+| 📝 **Build muscle memory** | Type commands, don't copy-paste |
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how:
+
+```bash
+# 1️⃣ Fork & clone
+git clone https://github.com/<your-username>/cka-2026-practice-labs-on-killercoda.git
+
+# 2️⃣ Create a new scenario
+mkdir 18-your-new-scenario
+# Follow existing folder structure
+
+# 3️⃣ Update structure.json
+
+# 4️⃣ Submit a PR 🎉
+```
+
+### Contribution Guidelines
+
+- ✅ Keep namespace/resource names consistent
+- ✅ Make setup scripts idempotent (safe to re-run)
+- ✅ Include verification logic where possible
+- ✅ Test on Killercoda before submitting
+
+---
+
+## �📚 Scenario Catalog
 
 <details>
 <summary><h3>🔷 01 — Helm: Render Manifests Without CRDs</h3></summary>
@@ -523,95 +613,6 @@ openssl s_client -connect <host>:443 -tls1_3
 ```
 
 </details>
-
----
-
-## 📁 Repository Structure
-
-```
-📦 cka-2026-practice-labs-on-killercoda
-├── 📄 structure.json          # Killercoda course navigation
-├── 📄 README.md               # You are here
-│
-└── 📂 01-argo-helm-template/  # Each scenario folder
-    ├── 📄 index.json          # Killercoda config
-    ├── 📄 intro.md            # 🎯 Problem statement
-    ├── 📄 step1.md            # 📝 Tasks & hints
-    ├── 📄 finish.md           # ✅ Wrap-up
-    └── 📂 scripts/
-        ├── 🔧 background.sh   # Auto-setup
-        └── ✔️ verify.sh       # Pass/Fail check
-```
-
----
-
-## 🎓 CKA Study Strategy
-
-<div align="center">
-
-```
-    ┌─────────────────────────────────────────────────────────┐
-    │                  🎯 THE 5-STEP METHOD                   │
-    └─────────────────────────────────────────────────────────┘
-                              │
-        ┌─────────────────────┼─────────────────────┐
-        │                     │                     │
-        ▼                     ▼                     ▼
-   ┌─────────┐          ┌─────────┐          ┌─────────┐
-   │  READ   │    →     │  PLAN   │    →     │ EXECUTE │
-   │  intro  │          │ 30-60s  │          │ kubectl │
-   └─────────┘          └─────────┘          └─────────┘
-                              │
-                              ▼
-                        ┌─────────┐
-                        │ VERIFY  │
-                        │ checks  │
-                        └─────────┘
-                              │
-                              ▼
-                        ┌─────────┐
-                        │ REPEAT  │
-                        │ faster! │
-                        └─────────┘
-```
-
-</div>
-
-### 💡 Pro Tips
-
-| Tip | Why It Matters |
-|-----|---------------|
-| ⏱️ **Time yourself** | CKA is 2 hours for 15-20 tasks |
-| 📖 **Use docs.kubernetes.io** | It's allowed in the exam! |
-| 🔄 **Practice verification** | Know how to prove success |
-| 💪 **Repeat weak areas** | Restart scenarios until fast |
-| 📝 **Build muscle memory** | Type commands, don't copy-paste |
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Here's how:
-
-```bash
-# 1️⃣ Fork & clone
-git clone https://github.com/<your-username>/cka-2026-practice-labs-on-killercoda.git
-
-# 2️⃣ Create a new scenario
-mkdir 18-your-new-scenario
-# Follow existing folder structure
-
-# 3️⃣ Update structure.json
-
-# 4️⃣ Submit a PR 🎉
-```
-
-### Contribution Guidelines
-
-- ✅ Keep namespace/resource names consistent
-- ✅ Make setup scripts idempotent (safe to re-run)
-- ✅ Include verification logic where possible
-- ✅ Test on Killercoda before submitting
 
 ---
 
