@@ -1,5 +1,3 @@
-# 01: Argo CD Helm Template (CRDs already installed)
-
 ## Goal
 Generate Argo CD manifests using Helm **without installing CRDs** (CRDs are pre-installed).
 

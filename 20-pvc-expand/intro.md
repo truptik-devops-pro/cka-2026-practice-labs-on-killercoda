@@ -1,5 +1,3 @@
-# 20: PVC + Pod Mount + Expand PVC
-
 ## Goal
 Create a PVC, mount it into a Pod, then expand the PVC and record the change.
 

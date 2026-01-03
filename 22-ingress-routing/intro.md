@@ -1,5 +1,3 @@
-# 22: Create Ingress Routing to Existing Service
-
 ## Goal
 Create an Ingress resource exposing a service on a path.
 

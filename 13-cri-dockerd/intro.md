@@ -1,5 +1,3 @@
-# 13: cri-dockerd + sysctl tuning
-
 ## Goal
 Install cri-dockerd, enable the service, and apply required sysctl settings.
 

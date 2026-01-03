@@ -1,5 +1,3 @@
-# 02: Sidecar Container (log-reader)
-
 ## Goal
 Update the `webapp` Deployment by adding a sidecar container that tails an application log file from a shared volume.
 

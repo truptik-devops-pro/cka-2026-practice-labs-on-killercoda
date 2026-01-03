@@ -1,5 +1,3 @@
-# 16: NodePort Service Exposure
-
 ## Goal
 Expose a deployment using NodePort on port 8080/TCP.
 

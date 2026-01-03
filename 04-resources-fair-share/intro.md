@@ -1,5 +1,3 @@
-# 04: Resource Management (fair requests/limits + overhead)
-
 ## Goal
 Adjust Pod requests/limits for stable operation and evenly distribute resources across 3 Pods.
 

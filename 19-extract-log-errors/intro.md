@@ -1,5 +1,3 @@
-# 19: Extract Specific Log Lines to File
-
 ## Goal
 Monitor logs of a Pod and extract only the error lines matching a pattern.
 

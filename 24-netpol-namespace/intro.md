@@ -1,5 +1,3 @@
-# 24: NetworkPolicy Allow Port From Specific Namespace Only
-
 ## Context
 There are pods in namespace `echo` that expose port 9000. Only pods from one namespace should reach them.
 

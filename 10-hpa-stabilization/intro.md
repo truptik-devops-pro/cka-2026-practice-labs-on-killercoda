@@ -1,5 +1,3 @@
-# 10: HPA (CPU 60%, 2-6 pods, downscale 45s)
-
 ## Goal
 Create an HPA for nginx with stable downscaling behavior.
 

@@ -1,5 +1,3 @@
-# 23: Add Named Port to Deployment + NodePort Service
-
 ## Goal
 Reconfigure an existing Deployment to expose a named port, then create a NodePort Service using that named port.
 

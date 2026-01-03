@@ -1,5 +1,3 @@
-# 11: CNI Installation (NetworkPolicy support required)
-
 ## Goal
 Install a CNI that enables pod networking and supports NetworkPolicy enforcement.
 

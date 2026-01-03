@@ -1,5 +1,3 @@
-# 14: Troubleshooting - kube-apiserver cannot connect to etcd
-
 ## Scenario
 After migration, kube-apiserver points to etcd peer port 2380 instead of client port 2379.
 

@@ -1,5 +1,3 @@
-# 18: Streaming Logs via Sidecar (Pod)
-
 ## Scenario
 A legacy app writes logs to a file inside the container. You want the logs to be visible using `kubectl logs` by adding a streaming sidecar.
 

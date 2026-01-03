@@ -1,5 +1,3 @@
-# 07: Ingress Resource (host/path routing)
-
 ## Goal
 Expose an application via Ingress and confirm HTTP 200.
 

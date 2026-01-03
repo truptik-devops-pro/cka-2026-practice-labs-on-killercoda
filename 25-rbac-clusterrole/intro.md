@@ -1,5 +1,3 @@
-# 25: RBAC for CI/CD Pipeline (ClusterRole + RoleBinding)
-
 ## Context
 You need permissions for a deployment pipeline service account. It should only be effective inside a single namespace.
 

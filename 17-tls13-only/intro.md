@@ -1,5 +1,3 @@
-# 17: TLS Hardening (TLSv1.3 only)
-
 ## Goal
 Restrict TLS to TLSv1.3 only and validate with curl.
 

@@ -1,5 +1,3 @@
-# 15: Taints & Tolerations
-
 ## Goal
 Reserve a node so normal pods can't schedule, then schedule a pod with toleration on that node.
 

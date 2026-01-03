@@ -1,5 +1,3 @@
-# 08: CRDs (Istio) + kubectl explain
-
 ## Goal
 Practice CRD discovery and schema documentation extraction using kubectl.
 

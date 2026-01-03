@@ -1,5 +1,3 @@
-# 03: Gateway API Migration (Ingress -> Gateway/HTTPRoute)
-
 ## Goal
 Migrate the existing Ingress `api-ingress` to Gateway API resources while keeping HTTPS/TLS behavior and routing rules.
 

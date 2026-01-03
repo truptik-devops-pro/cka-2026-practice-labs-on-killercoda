@@ -1,5 +1,3 @@
-# 05: StorageClass Configuration (default + WFFC)
-
 ## Goal
 Create a default StorageClass for local-path provisioning.
 
