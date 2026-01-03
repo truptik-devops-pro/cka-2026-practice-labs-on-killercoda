@@ -1,177 +1,642 @@
-# CKA 2026 Practice Labs on Killercoda (17 Scenarios)
+<div align="center">
 
-Hands-on, exam-style Kubernetes Administrator (CKA) labs you can run directly in **Killercoda**.
-Each scenario is designed to help you *practice the exact admin skills* CKA expects: build, fix, verify, and move on.
+# 🎯 CKA 2026 Practice Labs
 
-> ✅ These are **exam-style scenarios**, not “real exam questions”.
-> The goal is to teach skills through realistic tasks, clear success criteria, and repeatable labs.
+### *Master Kubernetes Administration with 17 Hands-On Scenarios*
 
----
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
+[![CKA](https://img.shields.io/badge/CKA-2026-FF6B6B?style=for-the-badge&logo=cncf&logoColor=white)](https://www.cncf.io/certification/cka/)
+[![Killercoda](https://img.shields.io/badge/Killercoda-Ready-00D084?style=for-the-badge&logo=linux&logoColor=white)](https://killercoda.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
-## What you get (why this repo is useful)
+<br/>
 
-- **17 guided labs** aligned to core CKA domains:
-  - Cluster Architecture & Configuration
-  - Workloads & Scheduling
-  - Services & Networking
-  - Storage
-  - Troubleshooting
-- Each lab follows a consistent structure:
-  - `intro.md` → scenario story + goal
-  - `step1.md` → tasks + hints + checks
-  - `scripts/background.sh` → auto-setup / reset state
-  - `scripts/verify.sh` → pass/fail verification (where implemented, and growing)
-- Designed for **hands-on learning**, not just reading solutions.
-  You practice on an actual cluster and prove success using kubectl checks.
+<img src="https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.svg" width="120" alt="Kubernetes Logo"/>
+
+<br/>
+
+**Practice. Verify. Pass.**
+
+*Exam-style scenarios designed for real cluster experience—not just reading solutions.*
 
 ---
 
-## Repo structure
-structure.json          # course navigation for Killercoda
-01-…/                 # scenario folders
-index.json            # Killercoda scenario config
-intro.md              # problem statement
-step1.md              # what to do
-finish.md             # wrap-up
-scripts/
-background.sh       # setup/reset
-verify.sh           # validation (PASS/FAIL)
+[🚀 Quick Start](#-quick-start) •
+[📚 Scenarios](#-scenario-catalog) •
+[🎓 Study Guide](#-cka-study-strategy) •
+[🤝 Contributing](#-contributing)
+
+</div>
 
 ---
 
-## How to use this on Killercoda (recommended)
+## ⚡ Why This Project?
 
-1. Fork or clone this repo.
-2. Open Killercoda → Creator → Repository.
-3. Add your GitHub repository.
-4. Add the **Deploy Key** shown by Killercoda into GitHub:
-   - Repo → Settings → Deploy keys → Add deploy key (read-only)
-5. Push updates anytime to publish changes to the labs.
+<table>
+<tr>
+<td width="50%">
 
----
+### 🔥 The Problem
 
-## Scenario list (17 labs) + what you learn for CKA
+❌ Most CKA prep is **theory-heavy**  
+❌ No real cluster to practice on  
+❌ Can't verify if your solution is correct  
+❌ No feedback loop for learning  
 
-### 01) Helm: Render manifests (no CRDs)
-**Folder:** `01-argo-helm-template`  
-**CKA skills:** Helm basics, templating, install planning, controlling CRD creation  
-**You practice:** rendering output to YAML, verifying resources before applying.
+</td>
+<td width="50%">
 
-### 02) Sidecar logging with shared volume
-**Folder:** `02-sidecar-log-tail`  
-**CKA skills:** Pod spec editing, multi-container patterns, volumes, troubleshooting logs  
-**You practice:** sidecar container + shared volume + verifying logs quickly.
+### ✅ The Solution
 
-### 03) Ingress to Gateway API migration
-**Folder:** `03-gatewayapi-migrate`  
-**CKA skills:** Modern traffic routing objects, HTTPRoute/Gateway, TLS listeners  
-**You practice:** translating intent (Ingress rules) into Gateway API resources.
+✔️ **17 hands-on labs** on real clusters  
+✔️ Automated verification scripts  
+✔️ Exam-style time pressure practice  
+✔️ Covers all 5 CKA domains  
 
-### 04) Fair resource requests/limits with overhead
-**Folder:** `04-resources-fair-share`  
-**CKA skills:** requests vs limits, scheduling impact, resource calculations  
-**You practice:** distributing node capacity across replicas and validating the spec.
-
-### 05) StorageClass default + WaitForFirstConsumer
-**Folder:** `05-storageclass-default`  
-**CKA skills:** StorageClasses, default annotation, binding modes  
-**You practice:** creating SC correctly and proving it is default.
-
-### 06) PriorityClass from highest existing value
-**Folder:** `06-priorityclass-patch`  
-**CKA skills:** scheduling priority, PriorityClass discovery, patching workloads  
-**You practice:** creating a new PC based on cluster state + applying to deployments.
-
-### 07) Ingress + NodePort service (echo path)
-**Folder:** `07-ingress-echo`  
-**CKA skills:** Services, Ingress basics, selectors/ports, test-from-cluster  
-**You practice:** wiring service + ingress and confirming HTTP behavior.
-
-### 08) CRDs list + kubectl explain extraction
-**Folder:** `08-crds-and-explain`  
-**CKA skills:** API discovery, CRDs, `kubectl explain`, resource schema understanding  
-**You practice:** extracting correct field docs and validating API resources exist.
-
-### 09) Least-permissive NetworkPolicy
-**Folder:** `09-networkpolicy-least`  
-**CKA skills:** NetworkPolicy rules, namespace isolation, traffic allow-lists  
-**You practice:** allowing only what’s needed, blocking everything else, proving it.
-
-### 10) HPA with downscale stabilization
-**Folder:** `10-hpa-stabilization`  
-**CKA skills:** autoscaling, HPA config, behavior tuning  
-**You practice:** creating HPA with correct limits + validating scaling behavior.
-
-### 11) Install CNI (policy-capable)
-**Folder:** `11-cni-install`  
-**CKA skills:** cluster networking foundation, CNI enablement, policy readiness  
-**You practice:** applying a CNI manifest and verifying cluster networking works.
-
-### 12) PVC + mount into MariaDB
-**Folder:** `12-pvc-mariadb`  
-**CKA skills:** PVC/PV usage, deployments + volume mounts, persistence checks  
-**You practice:** provisioning storage and validating data persistence.
-
-### 13) Install & enable cri-dockerd + sysctl
-**Folder:** `13-cri-dockerd`  
-**CKA skills:** runtime plumbing, node config basics, system services  
-**You practice:** runtime install/enable and confirming required kernel params.
-
-### 14) Troubleshoot kube-apiserver etcd endpoint
-**Folder:** `14-apiserver-etcd-port`  
-**CKA skills:** control-plane troubleshooting, static pod manifests, etcd client URL  
-**You practice:** diagnosing why API is down and fixing config safely.
-
-### 15) Taints & tolerations
-**Folder:** `15-taints-tolerations`  
-**CKA skills:** node taints, tolerations, controlled scheduling  
-**You practice:** tainting nodes and forcing a pod to land there (and proving it).
-
-### 16) Expose deployment via NodePort (port 80 named http)
-**Folder:** `16-nodeport-expose`  
-**CKA skills:** Service wiring, container ports, named ports, NodePort correctness  
-**You practice:** fixing ports + creating NodePort and verifying the mapping.
-
-### 17) Enforce TLSv1.3 only + validate with curl
-**Folder:** `17-tls13-only`  
-**CKA skills:** TLS policy, ingress/controller config patterns, validation testing  
-**You practice:** restricting protocol versions and proving TLS1.2 fails / TLS1.3 succeeds.
+</td>
+</tr>
+</table>
 
 ---
 
-## What’s “best” about this project (your differentiators)
+## 🎯 CKA Domain Coverage
 
-- **Hands-on-first:** every topic is a lab, not a PDF dump.
-- **Verification mindset:** learn to prove success using kubectl checks.
-- **Repeatable practice:** restart scenarios and build exam speed.
-- **Topic coverage:** networking + storage + troubleshooting (where CKA time is usually lost).
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                      CKA 2026 EXAM DOMAINS                          │
+├─────────────────────────────────────────────────────────────────────┤
+│  ████████████████████░░░░  Cluster Architecture        25%          │
+│  ██████████████████░░░░░░  Workloads & Scheduling      20%          │
+│  ████████████████░░░░░░░░  Services & Networking       20%          │
+│  ██████████░░░░░░░░░░░░░░  Storage                     10%          │
+│  ██████████████████████░░  Troubleshooting             25%          │
+└─────────────────────────────────────────────────────────────────────┘
+```
 
----
+<div align="center">
 
-## Suggested practice method (CKA-friendly)
+| Domain | Labs | Coverage |
+|:------:|:----:|:--------:|
+| 🏗️ Cluster Architecture | 4 | ████████░░ |
+| 📦 Workloads & Scheduling | 5 | ██████████ |
+| 🌐 Services & Networking | 4 | ████████░░ |
+| 💾 Storage | 2 | ████░░░░░░ |
+| 🔧 Troubleshooting | 2 | ████░░░░░░ |
 
-For each scenario:
-1. Read the goal (intro)
-2. Plan your commands (30–60 seconds)
-3. Implement
-4. Verify using `kubectl get/describe/logs` and the scenario checks
-5. Restart and repeat faster
-
----
-
-## Contributing / extending
-
-Want to add more scenarios or improve verification scripts?
-- Add a new folder like `18-.../`
-- Update `structure.json`
-- Keep naming consistent (namespaces + resources)
-- Prefer **idempotent** setup scripts (safe to re-run)
-
-PRs welcome.
+</div>
 
 ---
 
-## License
-Choose one:
-- MIT (most open)
-- Apache-2.0 (common for tooling)
+## 🚀 Quick Start
+
+### Option 1: Run on Killercoda (Recommended)
+
+```bash
+# 1️⃣ Fork this repository to your GitHub account
+
+# 2️⃣ Go to Killercoda → Creator → Repository
+
+# 3️⃣ Add your forked repo URL
+
+# 4️⃣ Copy the Deploy Key and add to:
+#    GitHub → Repo Settings → Deploy Keys (read-only)
+
+# 5️⃣ Start practicing! 🎉
+```
+
+### Option 2: Local Review
+
+```bash
+# Clone the repository
+git clone https://github.com/truptik-devops-pro/cka-2026-practice-labs-on-killercoda.git
+
+# Navigate to any scenario
+cd 01-argo-helm-template
+
+# Review the scenario structure
+cat intro.md      # Problem statement
+cat step1.md      # Tasks & hints
+cat scripts/verify.sh   # Verification logic
+```
+
+---
+
+## 📚 Scenario Catalog
+
+<details>
+<summary><h3>🔷 01 — Helm: Render Manifests Without CRDs</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `01-argo-helm-template` |
+| **Difficulty** | 🟢 Easy |
+| **Time** | ~10 min |
+| **Domain** | Workloads & Scheduling |
+
+**What You'll Learn:**
+- Helm templating fundamentals
+- Rendering manifests to YAML before applying
+- Controlling CRD creation during install
+
+**Key Commands:**
+```bash
+helm template <release> <chart> --skip-crds
+helm install --dry-run --debug
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 02 — Sidecar Container with Shared Volume</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `02-sidecar-log-tail` |
+| **Difficulty** | 🟢 Easy |
+| **Time** | ~10 min |
+| **Domain** | Workloads & Scheduling |
+
+**What You'll Learn:**
+- Multi-container pod patterns
+- Shared `emptyDir` volumes
+- Log aggregation with sidecar containers
+
+**Key Commands:**
+```bash
+kubectl logs <pod> -c <sidecar-container>
+kubectl exec -it <pod> -c <container> -- sh
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 03 — Migrate Ingress to Gateway API</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `03-gatewayapi-migrate` |
+| **Difficulty** | 🟡 Medium |
+| **Time** | ~15 min |
+| **Domain** | Services & Networking |
+
+**What You'll Learn:**
+- Gateway API concepts (Gateway, HTTPRoute)
+- Migrating from Ingress to modern routing
+- TLS listener configuration
+
+**Key Commands:**
+```bash
+kubectl get gateway,httproute
+kubectl describe httproute <name>
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 04 — Resource Requests & Limits Calculation</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `04-resources-fair-share` |
+| **Difficulty** | 🟡 Medium |
+| **Time** | ~12 min |
+| **Domain** | Workloads & Scheduling |
+
+**What You'll Learn:**
+- Requests vs Limits deep dive
+- Fair resource distribution across replicas
+- Scheduling impact of resource specs
+
+**Key Commands:**
+```bash
+kubectl describe node | grep -A5 "Allocated"
+kubectl top pods
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 05 — Default StorageClass Configuration</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `05-storageclass-default` |
+| **Difficulty** | 🟢 Easy |
+| **Time** | ~8 min |
+| **Domain** | Storage |
+
+**What You'll Learn:**
+- StorageClass creation and annotation
+- `WaitForFirstConsumer` binding mode
+- Setting default StorageClass
+
+**Key Commands:**
+```bash
+kubectl get sc
+kubectl patch storageclass <name> -p '{"metadata":{"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 06 — PriorityClass Discovery & Patching</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `06-priorityclass-patch` |
+| **Difficulty** | 🟡 Medium |
+| **Time** | ~12 min |
+| **Domain** | Workloads & Scheduling |
+
+**What You'll Learn:**
+- PriorityClass hierarchy
+- Discovering existing priority values
+- Patching deployments with priority
+
+**Key Commands:**
+```bash
+kubectl get priorityclass
+kubectl patch deployment <name> --patch '{"spec":{"template":{"spec":{"priorityClassName":"<pc>"}}}}'
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 07 — Ingress + NodePort Service Setup</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `07-ingress-echo` |
+| **Difficulty** | 🟢 Easy |
+| **Time** | ~10 min |
+| **Domain** | Services & Networking |
+
+**What You'll Learn:**
+- Service types and selectors
+- Ingress path-based routing
+- Testing from within the cluster
+
+**Key Commands:**
+```bash
+kubectl expose deployment <name> --port=80
+kubectl get ingress
+curl -H "Host: example.com" http://<ingress-ip>
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 08 — CRDs & kubectl explain</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `08-crds-and-explain` |
+| **Difficulty** | 🟢 Easy |
+| **Time** | ~8 min |
+| **Domain** | Cluster Architecture |
+
+**What You'll Learn:**
+- API resource discovery
+- Custom Resource Definitions
+- Using `kubectl explain` effectively
+
+**Key Commands:**
+```bash
+kubectl api-resources | grep <crd>
+kubectl explain <resource>.spec
+kubectl get crd
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 09 — Least-Privilege NetworkPolicy</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `09-networkpolicy-least` |
+| **Difficulty** | 🔴 Hard |
+| **Time** | ~15 min |
+| **Domain** | Services & Networking |
+
+**What You'll Learn:**
+- NetworkPolicy ingress/egress rules
+- Namespace isolation patterns
+- Default-deny policies
+
+**Key Commands:**
+```bash
+kubectl get networkpolicy -A
+kubectl describe networkpolicy <name>
+kubectl exec -it <pod> -- wget --timeout=2 <target>
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 10 — HPA with Downscale Stabilization</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `10-hpa-stabilization` |
+| **Difficulty** | 🟡 Medium |
+| **Time** | ~12 min |
+| **Domain** | Workloads & Scheduling |
+
+**What You'll Learn:**
+- Horizontal Pod Autoscaler configuration
+- Scale-down stabilization windows
+- Behavior tuning
+
+**Key Commands:**
+```bash
+kubectl autoscale deployment <name> --min=2 --max=10 --cpu-percent=50
+kubectl get hpa
+kubectl describe hpa <name>
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 11 — Install CNI Plugin</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `11-cni-install` |
+| **Difficulty** | 🟡 Medium |
+| **Time** | ~10 min |
+| **Domain** | Cluster Architecture |
+
+**What You'll Learn:**
+- CNI installation from manifest
+- Network policy support requirements
+- Verifying cluster networking
+
+**Key Commands:**
+```bash
+kubectl apply -f <cni-manifest>
+kubectl get pods -n kube-system | grep -E "calico|flannel|cilium"
+kubectl run test --image=busybox --rm -it -- ping <pod-ip>
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 12 — PVC Mount for MariaDB</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `12-pvc-mariadb` |
+| **Difficulty** | 🟡 Medium |
+| **Time** | ~12 min |
+| **Domain** | Storage |
+
+**What You'll Learn:**
+- PersistentVolumeClaim creation
+- Volume mounts in deployments
+- Data persistence verification
+
+**Key Commands:**
+```bash
+kubectl get pvc,pv
+kubectl exec -it <mariadb-pod> -- mysql -u root -p
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 13 — cri-dockerd Installation</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `13-cri-dockerd` |
+| **Difficulty** | 🔴 Hard |
+| **Time** | ~15 min |
+| **Domain** | Cluster Architecture |
+
+**What You'll Learn:**
+- Container runtime installation
+- Systemd service management
+- Required kernel parameters
+
+**Key Commands:**
+```bash
+systemctl enable --now cri-docker
+sysctl net.bridge.bridge-nf-call-iptables
+crictl info
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 14 — Troubleshoot API Server (etcd endpoint)</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `14-apiserver-etcd-port` |
+| **Difficulty** | 🔴 Hard |
+| **Time** | ~15 min |
+| **Domain** | Troubleshooting |
+
+**What You'll Learn:**
+- Static pod manifest editing
+- etcd client URL configuration
+- Control plane troubleshooting
+
+**Key Commands:**
+```bash
+cat /etc/kubernetes/manifests/kube-apiserver.yaml
+crictl ps | grep apiserver
+journalctl -u kubelet | tail -50
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 15 — Taints & Tolerations</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `15-taints-tolerations` |
+| **Difficulty** | 🟡 Medium |
+| **Time** | ~10 min |
+| **Domain** | Workloads & Scheduling |
+
+**What You'll Learn:**
+- Node tainting
+- Pod tolerations
+- Controlled scheduling
+
+**Key Commands:**
+```bash
+kubectl taint nodes <node> key=value:NoSchedule
+kubectl describe node <node> | grep Taint
+kubectl get pods -o wide
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 16 — NodePort Service Exposure</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `16-nodeport-expose` |
+| **Difficulty** | 🟢 Easy |
+| **Time** | ~8 min |
+| **Domain** | Services & Networking |
+
+**What You'll Learn:**
+- Named container ports
+- NodePort service creation
+- Port mapping verification
+
+**Key Commands:**
+```bash
+kubectl expose deployment <name> --type=NodePort --port=80 --name=<svc>
+kubectl get svc <svc> -o jsonpath='{.spec.ports[0].nodePort}'
+curl <node-ip>:<node-port>
+```
+
+</details>
+
+<details>
+<summary><h3>🔷 17 — Enforce TLS 1.3 Only</h3></summary>
+
+| Property | Value |
+|----------|-------|
+| **Folder** | `17-tls13-only` |
+| **Difficulty** | 🔴 Hard |
+| **Time** | ~15 min |
+| **Domain** | Cluster Architecture |
+
+**What You'll Learn:**
+- TLS version enforcement
+- Ingress controller configuration
+- Protocol validation testing
+
+**Key Commands:**
+```bash
+curl --tlsv1.2 https://<host>  # Should FAIL
+curl --tlsv1.3 https://<host>  # Should SUCCEED
+openssl s_client -connect <host>:443 -tls1_3
+```
+
+</details>
+
+---
+
+## 📁 Repository Structure
+
+```
+📦 cka-2026-practice-labs-on-killercoda
+├── 📄 structure.json          # Killercoda course navigation
+├── 📄 README.md               # You are here
+│
+└── 📂 01-argo-helm-template/  # Each scenario folder
+    ├── 📄 index.json          # Killercoda config
+    ├── 📄 intro.md            # 🎯 Problem statement
+    ├── 📄 step1.md            # 📝 Tasks & hints
+    ├── 📄 finish.md           # ✅ Wrap-up
+    └── 📂 scripts/
+        ├── 🔧 background.sh   # Auto-setup
+        └── ✔️ verify.sh       # Pass/Fail check
+```
+
+---
+
+## 🎓 CKA Study Strategy
+
+<div align="center">
+
+```
+    ┌─────────────────────────────────────────────────────────┐
+    │                  🎯 THE 5-STEP METHOD                   │
+    └─────────────────────────────────────────────────────────┘
+                              │
+        ┌─────────────────────┼─────────────────────┐
+        │                     │                     │
+        ▼                     ▼                     ▼
+   ┌─────────┐          ┌─────────┐          ┌─────────┐
+   │  READ   │    →     │  PLAN   │    →     │ EXECUTE │
+   │  intro  │          │ 30-60s  │          │ kubectl │
+   └─────────┘          └─────────┘          └─────────┘
+                              │
+                              ▼
+                        ┌─────────┐
+                        │ VERIFY  │
+                        │ checks  │
+                        └─────────┘
+                              │
+                              ▼
+                        ┌─────────┐
+                        │ REPEAT  │
+                        │ faster! │
+                        └─────────┘
+```
+
+</div>
+
+### 💡 Pro Tips
+
+| Tip | Why It Matters |
+|-----|---------------|
+| ⏱️ **Time yourself** | CKA is 2 hours for 15-20 tasks |
+| 📖 **Use docs.kubernetes.io** | It's allowed in the exam! |
+| 🔄 **Practice verification** | Know how to prove success |
+| 💪 **Repeat weak areas** | Restart scenarios until fast |
+| 📝 **Build muscle memory** | Type commands, don't copy-paste |
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how:
+
+```bash
+# 1️⃣ Fork & clone
+git clone https://github.com/<your-username>/cka-2026-practice-labs-on-killercoda.git
+
+# 2️⃣ Create a new scenario
+mkdir 18-your-new-scenario
+# Follow existing folder structure
+
+# 3️⃣ Update structure.json
+
+# 4️⃣ Submit a PR 🎉
+```
+
+### Contribution Guidelines
+
+- ✅ Keep namespace/resource names consistent
+- ✅ Make setup scripts idempotent (safe to re-run)
+- ✅ Include verification logic where possible
+- ✅ Test on Killercoda before submitting
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+
+### ⭐ Found This Helpful?
+
+**Star this repo** to keep it in your bookmarks and help others find it!
+
+<br/>
+
+[![GitHub stars](https://img.shields.io/github/stars/truptik-devops-pro/cka-2026-practice-labs-on-killercoda?style=social)](https://github.com/truptik-devops-pro/cka-2026-practice-labs-on-killercoda/stargazers)
+
+<br/>
+
+---
+
+**Made with ❤️ for the Kubernetes community**
+
+*Good luck on your CKA exam! 🍀*
+
+</div>
